@@ -1,0 +1,430 @@
+package main
+
+import "fmt"
+
+func main() {
+    arr := [3]int{1, 2, 3}
+    sum := 0
+
+    for _, num := range arr {
+        sum += num
+    }
+
+    fmt.Println("Soma:", sum)
+}
+
+package main
+
+import "fmt"
+
+func main() {
+    slice := []int{1, 2, 3, 4, 5}
+    index := 2
+
+    slice = append(slice[:index], slice[index+1:]...)
+
+    fmt.Println("Slice resultante:", slice)
+}
+
+package main
+
+import "fmt"
+
+func main() {
+    arr := [4]float64{1.5, 2.0, 2.5, 3.0}
+    product := 1.0
+
+    for _, num := range arr {
+        product *= num
+    }
+
+    fmt.Println("Produto:", product)
+}
+
+package main
+
+import "fmt"
+
+func main() {
+    var size int
+
+    fmt.Println("Digite o tamanho do Slice:")
+    fmt.Scanln(&size)
+
+    slice := make([]int, size)
+    sum := 0
+
+    fmt.Println("Digite os valores do Slice:")
+
+    for i := 0; i < size; i++ {
+        fmt.Scanln(&slice[i])
+        sum += slice[i]
+    }
+
+    fmt.Println("Slice:", slice)
+    fmt.Println("Soma dos valores:", sum)
+}
+
+package main
+
+import "fmt"
+
+func main() {
+    rows, cols := 3, 2
+    matrix := make([][]int, rows)
+
+    fmt.Println("Digite os valores da matriz:")
+
+    for i := 0; i < rows; i++ {
+        matrix[i] = make([]int, cols)
+
+        for j := 0; j < cols; j++ {
+            fmt.Printf("Elemento [%d][%d]: ", i, j)
+            fmt.Scanln(&matrix[i][j])
+        }
+    }
+
+    fmt.Println("Matriz resultante:")
+
+    for i := 0; i < rows; i++ {
+        for j := 0; j < cols; j++ {
+            fmt.Print(matrix[i][j], " ")
+        }
+        fmt.Println()
+    }
+}
+
+package main
+
+import "fmt"
+
+func main() {
+    arr := [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+    var searchValue int
+
+    fmt.Println("Digite um valor para buscar:")
+    fmt.Scanln(&searchValue)
+
+    found := false
+
+    for _, num := range arr {
+        if num == searchValue {
+            found = true
+            break
+        }
+    }
+
+    if found {
+        fmt.Println("O valor está presente no Array.")
+    } else {
+        fmt.Println("O valor não está presente no Array.")
+    }
+}
+
+package main
+
+import "fmt"
+
+func main() {
+    slice := make([]int, 0, 5)
+    var num int
+
+    fmt.Println("Digite um número inteiro:")
+    fmt.Scanln(&num)
+
+    found := false
+
+    for _, value := range slice {
+        if value == num {
+            found = true
+            break
+        }
+    }
+
+    if !found {
+        slice = append(slice, num)
+    }
+
+    fmt.Println("Slice resultante:", slice)
+}
+
+package main
+
+import "fmt"
+
+func main() {
+    slice := []string{"apple", "banana", "orange", "banana", "grape", "banana", "kiwi", "banana"}
+    var valueToRemove string
+
+    fmt.Println("Digite um valor para remover:")
+    fmt.Scanln(&valueToRemove)
+
+    result := make([]string, 0)
+
+    for _, value := range slice {
+        if value != valueToRemove {
+            result = append(result, value)
+        }
+    }
+
+    fmt.Println("Slice resultante:", result)
+}
+
+package main
+
+import "fmt"
+
+func main() {
+    arr := [6]float64{}
+    var num float64
+
+    fmt.Println("Digite um número:")
+    fmt.Scanln(&num)
+
+    for i := 0; i < len(arr); i++ {
+        arr[i] = num
+    }
+
+    fmt.Println("Array resultante:", arr)
+}
+
+package main
+
+import (
+    "fmt"
+    "math"
+)
+
+func main() {
+    slice := []int{10, 5, 2, 7, 9, 3, 1, 8, 6, 4}
+    min := math.MaxInt64
+    max := math.MinInt64
+
+    for _, num := range slice {
+        if num < min {
+            min = num
+        }
+        if num > max {
+            max = num
+        }
+    }
+
+    fmt.Println("Valor mínimo:", min)
+    fmt.Println("Valor máximo:", max)
+}
+
+package main
+
+import "fmt"
+
+func main() {
+    matrix := [2][3]int{
+        {1, 2, 3},
+        {4, 5, 6},
+    }
+    var row, col int
+
+    fmt.Println("Digite o índice da linha:")
+    fmt.Scanln(&row)
+
+    fmt.Println("Digite o índice da coluna:")
+    fmt.Scanln(&col)
+
+    fmt.Println("Valor:", matrix[row][col])
+}
+
+package main
+
+import "fmt"
+
+func main() {
+    arr := [5]int{10, 5, 9, 6, 7}
+    slice := make([]int, 0)
+
+    for _, num := range arr {
+        if num%3 == 0 {
+            slice = append(slice, num)
+        }
+    }
+
+    fmt.Println("Novo Slice:", slice)
+}
+
+package main
+
+import "fmt"
+
+func main() {
+    arr := [7]int{1, 2, 3, 4, 5, 6, 7}
+    var num int
+
+    fmt.Println("Digite um número:")
+    fmt.Scanln(&num)
+
+    arr[0] += num
+    arr[len(arr)-1] += num
+
+    fmt.Println("Array resultante:", arr)
+}
+
+package main
+
+import "fmt"
+
+func main() {
+    slice := []int{1, 2, 3, 4, 5, 6, 7, 8}
+    var index1, index2 int
+
+    fmt.Println("Digite o primeiro índice:")
+    fmt.Scanln(&index1)
+
+    fmt.Println("Digite o segundo índice:")
+    fmt.Scanln(&index2)
+
+    slice[index1], slice[index2] = slice[index2], slice[index1]
+
+    fmt.Println("Slice resultante:", slice)
+}
+
+package main
+
+import "fmt"
+
+func main() {
+    arr := [10]float64{3.5, 6.2, 7.8, 2.1, 9.4, 4.7, 5.5, 1.2, 8.9, 0.5}
+    slice := make([]float64, 0)
+
+    for _, num := range arr {
+        if num > 5 {
+            slice = append(slice, num)
+        }
+    }
+
+    fmt.Println("Novo Slice:", slice)
+}
+
+package main
+
+import "fmt"
+
+func main() {
+    arr := [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+    slice := make([]int, 0)
+
+    for _, num := range arr {
+        if num%2 == 0 {
+            slice = append(slice, num)
+        }
+    }
+
+    fmt.Println("Novo Slice:", slice)
+}
+
+package main
+
+import "fmt"
+
+func main() {
+    arr := [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+    sum := 0
+
+    for i := 0; i < len(arr); i += 2 {
+        sum += arr[i]
+    }
+
+    fmt.Println("Soma dos elementos nas posições pares:", sum)
+}
+
+package main
+
+import "fmt"
+
+func main() {
+    var n int
+
+    fmt.Println("Digite um número inteiro positivo:")
+    fmt.Scanln(&n)
+
+    primes := make([]int, 0)
+    count := 0
+    num := 2
+
+    for count < n {
+        if isPrime(num) {
+            primes = append(primes, num)
+            count++
+        }
+        num++
+    }
+
+    fmt.Println("Array com os", n, "primeiros números primos:", primes)
+}
+
+func isPrime(n int) bool {
+    if n <= 1 {
+        return false
+    }
+
+    for i := 2; i*i <= n; i++ {
+        if n%i == 0 {
+            return false
+        }
+    }
+
+    return true
+}
+
+package main
+
+import "fmt"
+
+func main() {
+    var n int
+
+    fmt.Println("Digite o tamanho dos arrays:")
+    fmt.Scanln(&n)
+
+    arr1 := make([]int, n)
+    arr2 := make([]int, n)
+
+    fmt.Println("Digite os elementos do primeiro array:")
+
+    for i := 0; i < n; i++ {
+        fmt.Scanln(&arr1[i])
+    }
+
+    fmt.Println("Digite os elementos do segundo array:")
+
+    for i := 0; i < n; i++ {
+        fmt.Scanln(&arr2[i])
+    }
+
+    sumArr := make([]int, n)
+
+    for i := 0; i < n; i++ {
+        sumArr[i] = arr1[i] + arr2[i]
+    }
+
+    fmt.Println("Terceiro array (soma dos dois primeiros):",
+
+package main
+
+import "fmt"
+
+func main() {
+    arr := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+    isOrdered := true
+
+    for i := 1; i < len(arr); i++ {
+        if arr[i] < arr[i-1] {
+            isOrdered = false
+            break
+        }
+    }
+
+    if isOrdered {
+        fmt.Println("O array está ordenado em ordem crescente.")
+    } else {
+        fmt.Println("O array não está ordenado em ordem crescente.")
+    }
+}
